@@ -1,0 +1,62 @@
+﻿
+
+Ví dụ fuse bit cho atmega8
+
+# Fuse high byte:
+# 0xc0 = 1 1 0 0   0 0 0 0 <-- BOOTRST (boot reset vector at 0x1800)
+#        ^ ^ ^ ^   ^ ^ ^------ BOOTSZ0
+#        | | | |   | +-------- BOOTSZ1
+#        | | | |   + --------- EESAVE (preserve EEPROM over chip erase)
+#        | | | +-------------- CKOPT (full output swing)
+#        | | +---------------- SPIEN (allow serial programming)
+#        | +------------------ WDTON (WDT not always on)
+#        +-------------------- RSTDISBL (reset pin is enabled)
+# Fuse low byte:
+# 0x9f = 1 0 0 1   1 1 1 1
+#        ^ ^ \ /   \--+--/
+#        | |  |       +------- CKSEL 3..0 (external >8M crystal)
+#        | |  +--------------- SUT 1..0 (crystal osc, BOD enabled)
+#        | +------------------ BODEN (BrownOut Detector enabled)
+#        +-------------------- BODLEVEL (2.7V)
+
+//Bao gồm 16 bit, chia thành 8 bit cao và 8 bit thấp.
+	> 8 bit cao.
+		+ RSTDISBL WDTON SPIEN CKOPT	EESAVE BOOTSZ1 BOOTSZ0 BOOTRST
+	> 8 bit thấp.
+		+ BODLEVEL BODEN SUT1 SUT0	CKSEL3 CKSEL2 CKSEL1 CKSEL0
+	Các bit này sẽ thiết lập một tính năng nào đó cho chip.
+	
+	gán giá trị  0 cho 1 Fuse bit đồng nghĩa với Fuse bit đó được lập trình (programmed), trong khi 1 nghĩa là không được lập trình (unprogrammed).
+	
+Ví dụ ở trên:
+	#Thiết lập xung clock cho chip:
+		> Dùng 4 bit CKSEL[3:0] và 1 bit CKOPT
+	#Thiết lập thời gian khởi động chíp, sử dụng 2 bit SUT[1:0].
+		> SUT1 = 1 và SUT0 = 1 => Thời gian khởi động là 64ms, nghĩa là sau 64ms sau khi cấp nguồn chip mới thật sự ổn định, có thể dùng để cho ổn định nguồn xung clock sau khi cấp nguồn.
+	#Phát hiện sụt áp trên chip
+		> BODE = 0 Enable: Brown-Out Detection Enable. Đây là bit dùng để phát hiện sụt áp, nếu sụt áp sảy ra thì chip sẽ được reset, tránh trường hợp chip chạy một cách không xác định. Khi bit BODE được set thì bit BODLEVEL sẽ dùng để xác định điện áp bao nhiêu thì sẽ là sụt áp.Nếu BODLEVEL = 1 => 2.7V
+	#Thiết lập phần code nào sẽ chạy, code chương trình của bạn hay code ở bootloader.
+		> Nếu BOOTRST = 1 thì khi reset chip, chương trình sẽ thực thi ở vị trí 0x0000 bình thường, còn nếu BOOTRST = 0 thì khi reset code ở phần bootloader ( vị trí 0x1800 chằng hạn, vì vị trí của phần bootloader có thể thay đổi được ???!! )
+		> BOOTSZ1 BOOTSZ0, kích thước của bootloader của chip avr có thể thay đổi được, việc thay đổi kích thước của bootloader thông qua 2 bit BOOTSZ[1:0], dĩ nhiên 2 bit này có tác dụng khi BOOTRST = 0.
+	#Khi xóa chip, EEPROM của chip có bị xóa 2 không???
+		> Nếu EESAVE = 0, EEPROM của chip không bị xóa khi xóa chip bằng mạch nạp.
+	#Mếu CKOPT = 1 thì nguồn xung clock cho chip chỉ tối đa là 8Mhz, nếu cố tình dùng thạch anh lớn hơn, 12Mhz hay 16Mhz thì chip sẽ chạy không ổn định, cách khắc phục là thiết lập cho bit CKOPT = 0.
+	
+	#SPIEN, bit này dùng để cho phép hay không cho phép nạp chip thông qua phương pháp nạp nối tiếp (ISP Programing). Mạch nạp USBASP dùng kiểu nạp nối tiếp này.
+		> Nếu SPIEN = 0 thì sẽ cho phép nạp bằng mạch nạp nối tiếp.
+		> Cẩn thận khi thiết lập fuse bit bằng mạch nạp nối tiếp, nếu vô tình thiết lập SPIEN = 1 thì chip sẽ không thể nạp được nữa. Để có thể nạp được bạn cần có một mạch nạp song song để thiết lập lại fuse bit SPIEN = 0.
+	#WDTON thiết lập watch dog cho chip.
+	
+	#RSTDISBL. Trên ATmega8 chân Reset của chip có thể dùng làm chân nhập xuất dữ liệu, Tốt nhất là bạn để RSTDISBL = 1 để có thể reset chip thông qua nút nhấn bên ngoài, ngoài ra chân reset này còn dùng để nạp code cho chip thông qua mạch nạp nối tiếp.
+	
+	
+**** Reset, watchdog, ISP/HSVV programming, EPPROM, Bootloader.
+	> là một chương trình nhỏ nằm trên một vùng nào đó của bộ nhớ không bị mất dữ liệu khi mất điện (ROM, Flash, Program memory), chương trình này thường có một hay một vài nhiệm vụ xác định. Đối với vi điều khiển avr, bootloader sẽ nằm ở nhớ Flash (Program memory) từ địa chỉ được xác định bởi BOOTSZ[0:1] 0x1800 chẳng hạn (bài fuse bit) vùng còn lại sẽ chứa chương trình thực thi bình thường của bạn.
+	> Khi đã thiết lập sẽ boot vào địa chỉ của bootloader (BOOTRST = 0), chip sẽ chạy mã được lưu ở địa chỉ 0x1800 mà không chạy mã chương trình được lưu ở 0x0000.
+	> Vậy bằng cách lập trình một chương trình nho nhỏ để bỏ nó vào vùng nhớ bootloader, khi chip khỏi động sẽ chạy những đoạn mã này. Thường thì trình bootloader sẽ giúp ta nạp mã lập trình cho chip. Cách hoạt động như sau:
+		Ta lập trình => biên dịch => hexfile
+		hex => Bootloader => Nạp vào chip.
+	> Chương trình bootloader sẽ giao tiếp với máy tính, thông qua UART hay USB để lấy file hex của chúng ta, sau đó bootloader sẽ nạp file hex đó vào chính xác vào vùng FLASH của chip.
+	> Đây là cách nạp code mà không cần mạch nạp, ta chỉ cần nạp code bootloader 1 lần bằng mạch nạp mà thôi.
+	
+

@@ -14,7 +14,7 @@ Bootloader
 Fuse bits
 Lock bits
 Programmer
-	usbAsp
+	usbAsp		<=> avrdude		<=> CEASP
 	skt500
 	USB_Bootloader
 	USB_HID_Bootloader

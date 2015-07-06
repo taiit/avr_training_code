@@ -1,0 +1,17 @@
+c1.staticflickr.com/1/409/19255420479_688b997208_o.png
+
+/1/409/19255420479_688b997208_o.png
+Fuse bit cua AVR
+	AVR bootloader
+	Bộ nhớ AVR
+	AVR Watchdog
+	IDE Atmel Studio
+	Mạch nạp cho AVR
+	*fuse online
+
+AVR bootloader
+	Fuse bit của AVR
+	BootUSB_HID
+	BootUART
+AVR memory
+	

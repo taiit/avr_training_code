@@ -1,0 +1,4 @@
+AVR memory
+	Bộ nhớ hay được bỏ qua nhất khi tìm hiểu vi điều khiển. Một phần vì nó "không quan trọng" và hầu hết việc lập trình thông qua ngôn ngữ C (không phải asm) nên càng làm cho việc tìm hiểu bộ nhớ của vi điều khiển thêm phần chán.
+	
+	Tuy nhiên, khi biết được kích thước, cách tổ chức

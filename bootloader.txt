@@ -1,0 +1,21 @@
+Bộ nhớ chương trình: Vùng nhớ chương trình thực thi >< vùng nhớ bootloader.
+Bộ nhớ dữ liệu:
+Bootloader là một chương trình nhỏ nằm trên một vùng nào đó của bộ nhớ không bị mất dữ liệu khi mất điện (ROM, Flash, Program memory), chương trình này thường có một hay một vài nhiệm vụ xác định. Đối với vi điều khiển avr, bootloader sẽ nằm ở nhớ Flash (Program memory) từ địa chỉ được xác định bởi BOOTSZ[1:0]. Đối với atmega8 thì giá trị của BOOTSZ[1:0] và địa chỉ của vùng bootloader như sau:
+
+
+ Vậy nếu BOOTSZ0 = xx và BOOTSZ1 = xx thì địa chỉ bắt đầu bootloader là 0x1800 kết thúc tại 0xxxxx và vùng còn lại từ 0x0000 -> 0xxxxx sẽ chứa chương trình thực thi bình thường của bạn.
+ 
+ Có 2 vùng nhớ mà vi điều khiển có thể chạy vậy nên cần có một thiết lập để vi điều khiển biết được sẽ thực thi code ở vùng nào khi khởi động. Việc thiết lập này được thực hiện qua fuse bit BOOTRST (bài fuse bit).
+ Khi bit BOOTRST = 0 vi điều khiển sẽ thực thi code ở phần bootloader và khi BOOTRST = 1 chương trình sẽ chạy bình thường.
+ 
+ Ứng dụng phổ biến của bootloader là nạp code mà không cần mạch nạp. Hoạt động của nó như sau:
+	Bootloader sẽ giao tiếp với máy tính thông qua một chuẩn giao tiếp nào đó, thông qua UART-RS232 hay USB chẳng hạn.
+	Trên máy tính, chuyển dữ liệu cần nạp cho chip vi điều khiển (file hex, file bin) thông qua những chuẩn giao tiếp trên.
+	Bootloader nhận được dữ liệu này và tiến hành ghi dữ liệu vừa nhận được vào vùng nhớ chương trình thực thi.	
+	
+	Sau khi ghi xong thì bootloader nhảy đến địa chỉ đầu tiên (0x0000) của vùng nhớ chương trình thực thi để thực hiện code vừa nạp được.
+	
+	(hinh)
+	
+	Đối với avr có rất nhiều bootloader được phát triển và sử dụng rộng rãi, phổ biến và được dùng nhiều nhất có thể kể đến là bootloader của Ardunio, Ardunio là một hướng tiếp cận khác khi đã rành rẽ những thứ cơ bản của avr, học vi điều khiển từ Ardunio cũng có cái hay tuy nhiên tự tìm hiểu từ những thứ cơ bản nhất cũng là một thú vị.
+	Ở đây tôi có một bootloader mà tôi đang sử dụng là bootloader dùng USB-HID để giao tiếp với máy tính, và một bootloader cũ hơn là bootloader dùng UART-RS232 để giao tiếp.

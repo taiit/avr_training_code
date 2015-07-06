@@ -51,12 +51,6 @@ Ví dụ ở trên:
 	
 	
 **** Reset, watchdog, ISP/HSVV programming, EPPROM, Bootloader.
-	> là một chương trình nhỏ nằm trên một vùng nào đó của bộ nhớ không bị mất dữ liệu khi mất điện (ROM, Flash, Program memory), chương trình này thường có một hay một vài nhiệm vụ xác định. Đối với vi điều khiển avr, bootloader sẽ nằm ở nhớ Flash (Program memory) từ địa chỉ được xác định bởi BOOTSZ[0:1] 0x1800 chẳng hạn (bài fuse bit) vùng còn lại sẽ chứa chương trình thực thi bình thường của bạn.
-	> Khi đã thiết lập sẽ boot vào địa chỉ của bootloader (BOOTRST = 0), chip sẽ chạy mã được lưu ở địa chỉ 0x1800 mà không chạy mã chương trình được lưu ở 0x0000.
-	> Vậy bằng cách lập trình một chương trình nho nhỏ để bỏ nó vào vùng nhớ bootloader, khi chip khỏi động sẽ chạy những đoạn mã này. Thường thì trình bootloader sẽ giúp ta nạp mã lập trình cho chip. Cách hoạt động như sau:
-		Ta lập trình => biên dịch => hexfile
-		hex => Bootloader => Nạp vào chip.
-	> Chương trình bootloader sẽ giao tiếp với máy tính, thông qua UART hay USB để lấy file hex của chúng ta, sau đó bootloader sẽ nạp file hex đó vào chính xác vào vùng FLASH của chip.
-	> Đây là cách nạp code mà không cần mạch nạp, ta chỉ cần nạp code bootloader 1 lần bằng mạch nạp mà thôi.
+	
 	
 

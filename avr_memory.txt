@@ -1,4 +1,12 @@
 AVR memory
 	Bộ nhớ hay được bỏ qua nhất khi tìm hiểu vi điều khiển. Một phần vì nó "không quan trọng" và hầu hết việc lập trình thông qua ngôn ngữ C (không phải asm) nên càng làm cho việc tìm hiểu bộ nhớ của vi điều khiển thêm phần chán.
 	
-	Tuy nhiên, khi biết được kích thước, cách tổ chức
+	Tuy nhiên, khi biết được kích thước, cách tổ chức của bộ nhớ thì sẽ dể dàng thực hiện các ứng ụng hơn.
+	
+Bộ nhớ của avr chi làm 3 vùng trong đó có 2 vùng chính là vùng nhớ của chương trình (Program memory) và bộ nhớ dữ liệu (Dât memory) và vùng nhớ epprom, cả 3 vùng nhớ này là tuyến tính và không thay đổi được.
+
+Bộ nhớ chương trình.
+	> Đây là bộ nhớ lặp trình lại được.
+	> Có dung lượng 8Kbytes, dùng để lưu trữ chương trình được thực thi. Vì độ rộng của lệnh trên avr là 8 bits (hay 16 bits) nên bộ nhớ được tổ chức thành 4K x 16 bit.
+	> Bộ nhớ chương trình của avr lại chia thành 2 phần chính, tạm gọi là phần chứa chương trình thực thi và phần chứa bootloader.
+	

@@ -1,0 +1,638 @@
+C++ Evaluation Question
+
+Table of Contents
+1	Basic C++	2
+1.1	C Question	2
+1.1.1	Basic C question: input, output, variable, expression, program structure…	2
+1.1.2	Data Type & Operation	2
+1.1.3	Logical & Bit operator	2
+1.1.4	Loops & Structure Programming	3
+1.1.5	Function & Program structure	3
+1.1.6	Pointer & Array	3
+1.1.7	Structure & Union	3
+1.2	C++ OOP Question	3
+1.2.1	Concept of OOP	3
+1.2.2	Classes	4
+1.2.3	Function	4
+1.2.4	Constructor & Destructor	4
+1.2.5	Memory management	4
+1.2.6	Reference & argument passing in C++	4
+1.2.7	Operator overloading, initialization, & assignment	4
+1.2.8	Scope & Access control	5
+1.2.9	Inheritance	5
+1.2.10	Polymorphism & Virtual function	5
+2	Advanced C++	5
+2.1	Inheritance and Polymorphism	5
+2.2	ANSI C++ libray	5
+2.3	Template	5
+2.4	I/O in C++	6
+2.5	Practice aspect of C++ programming	6
+2.6	Advanced Polymorphism and Inheritance	6
+2.7	Exception handling	6
+2.8	Runtime Type information	6
+2.9	Inheritance hierarchies and multiple inheritance	6
+2.10	Application of C++ concept	7
+2.11	STL	7
+2.11.1	Template Overview	7
+2.11.2	Overview of STL	7
+2.11.3	STL container	8
+2.11.4	STL Iterator	8
+
+
+
+1	Basic C++
+1.1	C Question 
+1.1.1	Basic C question: input, output, variable, expression, program structure…
+1)	Know the main function and its argument: int main, void main, input parameter, return value
+2)	How to get input from keyboard in C, How to output to console in C
+3)	Know built-in type in C: char, char*, int, long, float, … and size of them
+4)	Know pointer, constants, static variable
+5)	Know how to compile a C application
+6)	Know Static Library / Dynamic Library / Executable
+7)	Know what is header file
+8)	Know #include keyword
+9)	Know comment in C
+10)	Know how to define a function, function syntax
+
+Write a Hello World in C and print out the size of C built-in type
+
+1.1.2	Data Type & Operation
+1)	Know integer data type: int, long, …
+2)	Know floating point presentation in C: float, double…
+3)	Know type conversion: up casting, down casting
+4)	Know arithmetic operation: +, -, *, /, %,… order of them
+1.1.3	Logical & Bit operator
+1)	Know bool variable and how to use it
+2)	Know Logical & Relation operation: if/else, >, <, …
+3)	Know bitwise operation
+4)	Know Shifting & Masking operation
+1.1.4	Loops & Structure Programming
+1)	Know while, do while…
+2)	Quitting Inf loop: break, continue,…
+3)	How to control the loop operation
+4)	For loop
+5)	Switch, nested if…
+1.1.5	Function & Program structure
+1)	Function prototype & type checking
+2)	Returning value & argument passing
+3)	Pass-by-reference, pass-by-value
+4)	Extern keywords
+5)	Variable scope
+6)	Preprocessor
+1.1.6	Pointer & Array
+1)	Pointer & addr
+2)	malloc/free
+3)	Pointer & Function argument
+4)	Address arithmetic
+5)	Pointer & array
+6)	Array of pointer
+7)	Function pointer
+8)	String type
+1.1.7	Structure & Union
+1)	Structure
+2)	Structure & function
+3)	Array of structure
+4)	Union
+1.2	C++ OOP Question
+1.2.1	Concept of OOP
+1)	What is Object
+2)	Information hiding: public, private, protected
+3)	Abstract data type
+4)	Method and message
+5)	Classes
+6)	Class inheritance
+7)	Polymorphism
+1.2.2	Classes
+1)	Data encapsulation
+2)	Definition of C++ class
+3)	Member data & function
+4)	The this Pointer
+5)	Abstract data type
+1.2.3	Function
+1)	Function prototype & type checking
+2)	Conversion of parameter
+3)	Default Argument
+4)	Inline function
+5)	Function overloading
+1.2.4	Constructor & Destructor
+1)	Constructor & initialization
+2)	Object creation & Destruction
+3)	Destructor
+4)	Multiple constructor
+5)	Hidden constructor
+1.2.5	Memory management
+1)	Static, automatic & heap memory
+2)	New & delete
+3)	Handling memory allocation error
+4)	Hiding detail of memory management in a class
+5)	Implement a dynamic string class
+1.2.6	Reference & argument passing in C++
+1)	Call by value
+2)	Reference declaration
+3)	Reference argument
+4)	Copy constructor
+5)	Constant argument and function
+1.2.7	Operator overloading, initialization, & assignment
+1)	Operator overloading
+2)	Semantic of assignment
+3)	Initialization vs. Assignment
+4)	Overloading assignment
+5)	Type conversion
+1.2.8	Scope & Access control
+1)	Scope in C++
+2)	Friend function
+3)	Const and Enumeration type
+4)	Static member
+1.2.9	Inheritance
+1)	Inheritance for modeling and reuse
+2)	Class derivation
+3)	Access control
+4)	Base class initialization
+5)	Composition
+6)	Initializing class type member
+1.2.10	Polymorphism & Virtual function
+1)	Virtual function & dynamic binding
+2)	Polymorphism in C++
+3)	Pointer conversion
+4)	Virtual destructor
+5)	Abstract class and pure virtual function
+2	Advanced C++
+2.1	Inheritance and Polymorphism
+1)	Class derivation
+2)	Access control
+3)	Base class initialization
+4)	Initializing class type member
+5)	Polymorphism and virtual function
+6)	Pointer conversion
+7)	Virtual destructor
+8)	Abstract class and Pure virtual function
+2.2	ANSI C++ libray
+1)	New header file
+2)	Namespace in the standard library
+3)	ANSI C++ string classes
+4)	Template in standard library
+2.3	Template
+1)	C++ Template mechanism
+2)	Function template
+3)	Class template
+4)	Generic programming
+5)	Implement a general array class
+6)	Standard template library
+2.4	I/O in C++
+1)	Stream I/O Library
+2)	Formatted stream I/O
+3)	File I/O
+4)	I/O in user defined classes
+2.5	Practice aspect of C++ programming
+1)	Interfacing C & C++
+2)	Namespace
+3)	Reliability in C++ program
+4)	Testing consideration
+5)	Efficiency consideration
+2.6	Advanced Polymorphism and Inheritance
+1)	Orthodox canonical form
+2)	Public, private and protected inheritance
+3)	Composition vs. Inheritance
+4)	Template vs. Inheritance
+5)	Interface encapsulation
+2.7	Exception handling
+1)	C++ exception mechanism
+2)	Exception compared to other handling techniques
+3)	Throw, try and catch
+4)	Exception context and stack unwinding
+5)	Uncaught exception
+6)	Automatic cleanup in Exception handling
+2.8	Runtime Type information
+1)	Runtime type information (RTTI) mechanism
+2)	Type_info class and typeid operator
+3)	Type safe pointer conversion
+4)	New C++ cast syntax
+2.9	Inheritance hierarchies and multiple inheritance
+1)	Smalltalk style class hierarchies
+2)	Collection classes in object-based hierarchies
+3)	Independent class hierarchies in C++
+4)	Multiple inheritance
+5)	Resolving ambiguities
+6)	Duplicate subobjects
+7)	Virtual base classes
+8)	RTTI in multiple inheritance
+2.10	Application of C++ concept
+1)	Object validation
+2)	Smart pointer
+3)	Reference counting
+4)	Generic smart pointer
+2.11	STL
+2.11.1	Template Overview
+1)	Template
+2)	Overloading function
+3)	Template function
+4)	Specializing a template function
+5)	Disambiguation under specialization
+6)	Template classes
+7)	An array template class
+8)	Instantiating a template class object
+9)	Rule for template
+10)	Non member function with a template argument
+11)	Friend of template classes
+12)	Template with multiple type parameter
+13)	Non type parameter for template class
+14)	Comment regarding template
+2.11.2	Overview of STL
+1)	Perspective
+2)	History and evolution
+3)	New feature in C++
+4)	The STL
+5)	Design goal
+6)	Header file
+7)	STL component
+8)	Container
+9)	Algorithm
+10)	Iterator
+2.11.3	STL container
+1)	Vector
+2)	Deque
+3)	List
+4)	Beauty of STL
+5)	Associative container
+6)	Set
+7)	Multiset
+8)	Map
+9)	Multimap
+2.11.4	STL Iterator
+1)	Input iterator
+2)	Output iterator
+3)	Forward iterator
+4)	Backward iterator
+
+
+
+
+
+1)	What’s wrong
+ 
+Choice 1
+	The member function f() must return a value.
+Choice 2
+	The static member function f() accesses the non-static z.
+Choice 3
+	The static member function f() accesses the non-static x.
+Choice 4
+	Class X does not have any private members.
+Choice 5
+	Class X does not have any protected members.
+2)	Referring to the scenario above, which one of the following statements correctly declares the operator overload to accomplish the goal?
+ 
+Choice 1
+	Counter& operator+(int inc);
+Choice 2
+	Counter& operator(int inc)+;
+Choice 3
+	int operator+(int inc);
+Choice 4
+	Counter& operator+(Counter& inc);
+Choice 5
+	Counter* operator+(int inc);
+3)	Given that all inputs to the function above are limited to values within the valid range of the function, which one of the following statements below accurately describes the operation of that function?
+
+std::string FindName(char i) { 
+ static std::string s; 
+ switch (i) { 
+   case 1:  s = "ONE"; 
+            break; 
+   case 2:  s = "TWO"; 
+            break; 
+   case 3:  s = "THREE"; 
+            break; 
+   case 4:  s = "FOUR"; 
+            break; 
+   case 5:  s = "FIVE"; 
+            break; 
+   default: s = "Out of range"; 
+            break; 
+ } 
+ return s; 
+}
+Choice 1
+	The function adds the new value to the total of all values submitted thus far and returns the new total.
+Choice 2
+	The function returns the string "ONETWOTHREEFOURFIVE" in all cases.
+Choice 3
+	The function converts the string name of a number into its integer value and returns that value.
+Choice 4
+	The function returns the string name of the numeric value passed as the parameter.
+Choice 5
+	The function returns a string whose first character is equal to the value passed as the parameter.
+4)	Referring to the sample code above and assuming the standard C++ new operator is being used, which one of the following statements is true? 
+ 
+Choice 1
+	An exception of type std::outofmemory can be thrown.
+Choice 2
+	This code does not compile.
+Choice 3
+	HandleNoMemory() is never called.
+Choice 4
+	sizeof(p) is 400 after a successful new.
+Choice 5
+	An exception of type std::failed_alloc can be thrown.
+5)	Question   	Which one of the following is NOT a C++ iterator category?
+Choice 1
+	Bidirectional Iterator
+Choice 2
+	Input Iterator
+Choice 3
+	Random access Iterator
+Choice 4
+	Forward Iterator
+Choice 5
+	Virtual Iterator
+6)	Question   	Which data types can be thrown as exceptions in a C++ program?
+Choice 1
+	Only subclasses of std::exception
+Choice 2
+	Any valid C++ data type, except void
+Choice 3
+	Only integer data types
+Choice 4
+	Only user-defined types
+Choice 5
+	Only classes
+Sample Code
+	class professor {}; class researcher {}; class teacher : public professor {}; class myprofessor : public teacher, public virtual researcher {};
+Question 	Referring to the sample code above, when an object of class myprofessor goes out of scope, what is the correct order of destructor invocation?
+Choice 1
+	~researcher(),~professor(), ~teacher(), ~myprofessor()
+Choice 2
+	~myprofessor(),~professor(), ~teacher(),~researcher()
+Choice 3
+	~professor(), ~teacher(),~myprofessor(), ~researcher()
+Choice 4
+	~myprofessor(),~teacher(),~professor(),~researcher()
+Choice 5
+	~teacher(),~researcher(),~myprofessor(),~professor()
+7)	
+Sample Code
+	class Foo { int i; public: Foo(int x) : i(x) { } };
+Question 	Referring to the sample code above, which one of the following lines of code is syntactically correct C++?
+Choice 1
+	int i = Foo::i;
+Choice 2
+	Foo *af = new Foo[10];
+Choice 3
+	const Foo &af = Foo(1);
+Choice 4
+	Foo &f = new Foo(1);
+Choice 5
+	Foo *f = new Foo;
+8)	Question   	Which one of the following is a valid reason to declare a pure virtual function within your class?
+Choice 1
+	To allow for templated classes to be used with friend functions
+Choice 2
+	To maximize code reuse by allowing base classes of your class to provide multiple definitions for this function
+Choice 3
+	To maximize the memory efficiency, provided that execution speed is not at a premium
+Choice 4
+	To maximize the execution speed of the function, provided that memory is not at a premium
+Choice 5
+	To ensure that this function is overridden in derived classes that are to be instantiated
+9)	Sample Code
+	class X { int a; public: X() { cout << "X constructor was called" << endl; } X(int n) { cout << "X(int) constructor was called" << endl; } ~X() { cout << "X destructor was called" << endl; } }; int main() { X x(3); return 0; }
+Question 	Assuming all necessary header files and using directives are present, what is the output from the sample code above?
+Choice 1
+	X(int) constructor was called
+Choice 2
+	X constructor was called
+X destructor was called
+Choice 3
+	X(int) constructor was called
+X destructor was called
+Choice 4
+	X(int) constructor was called
+X constructor was called
+X destructor was called
+Choice 5
+	X constructor was called
+X(int) constructor was called
+X destructor was called
+10)	Sample Code
+	void foo()
+{
+   throw 5;
+}
+
+int main()
+{
+   int i;
+   try
+   {
+       foo();
+   }
+   catch (std::bad_alloc e) { i = 1; }
+   catch (std::string e) { i = 2; }
+   catch (double e) { i = 3; }
+   catch (int e) { i = 4; }
+   catch (bool e) { i = 5; }
+
+   // Point X
+}
+Question 	At Point X in the sample code above, what is the value of i?
+Choice 1
+	1
+Choice 2
+	2
+Choice 3
+	3
+Choice 4
+	4
+Choice 5
+	5
+11)	Scenario
+ 
+Question 	Referring to the scenario above, what causes the error?
+Choice 1
+	You cannot assign a char* literal to a string constructor.
+Choice 2
+	c is not a pointer to const.
+Choice 3
+	You cannot assign strlen(c) to a floating point variable.
+Choice 4
+	You cannot assign a literal character to a char* variable.
+Choice 5
+	std::string::c_str() is missing a parameter
+12)	Question   	Which one of the following member functions returns a zero terminated character array from a std::string object?
+Choice 1
+	std::string::operator(char*)
+Choice 2
+	std::string::body
+Choice 3
+	std::string::string()
+Choice 4
+	std::string::data()
+Choice 5
+	std::string::c_str()
+13)	Sample Code
+	class Foo {
+public:
+   virtual ~Foo() {}
+};
+
+class Bar : public Foo {
+};
+
+class Bar2 : public Foo {
+};
+
+class FooBar : public Bar {
+};
+
+class FooBar2 : public Bar2 {
+};
+Question 	Referring to the sample code above, which one of the following declarations is valid C++?
+Choice 1
+	Foo &foo = static_cast<Foo&>(FooBar2 f);
+Choice 2
+	Foo &foo2 = new FooBar;
+Choice 3
+	FooBar2 &fb2 = dynamic_cast<Foo&>(new FooBar2);
+Choice 4
+	FooBar2 *fb3 = new Foo;
+Choice 5
+	Foo &foo = dynamic_cast<Foo&>(*(new FooBar2));
+14)	Code Sample
+ 
+Question 	Which one of the following strings is the output from the code sample above?
+Choice 1
+	1;23;
+Choice 2
+	1;23
+Choice 3
+	1;2;3;4;
+Choice 4
+	1;2;3;4;5;
+Choice 5
+	123;
+15)	Question   	Which one of the following is a difference between defining a non-special member function and a constructor?
+Choice 1
+	A constructor can declare values; a member function cannot.
+Choice 2
+	A constructor can return values; a member function cannot.
+Choice 3
+	A member function can define values; a constructor cannot.
+Choice 4
+	A constructor can define values; a member function cannot.
+Choice 5
+	A member function can return values; a constructor cannot.
+Code Sample
+class Base { 
+ /* ... */ 
+public: 
+ Base() { /* ... */ }; 
+ virtual ~Base() { /* ... */ } 
+}; 
+
+class Derived : public Base { 
+ /* ... */ 
+public: 
+ Derived() { /* ... */ }; 
+ ~Derived() { /* ... */ } 
+};
+Question 	Referring to the code sample above, which one of the declarations below requires a virtual destructor in the Base class?
+Choice 1
+	Derived *derived = new Derived;
+Choice 2
+	Base *base = new Base;
+Choice 3
+	Derived *derived = new Base;
+Choice 4
+	Base *derived = new Derived;
+Choice 5
+	Base base = new Derived;
+
+16)	Sample Code
+ 
+Question 	What is the output of the sample code above?
+Choice 1
+	B::B()
+A::A()
+B::Foo()
+Choice 2
+	A::A()
+B::B()
+A::A()
+A::Foo()
+Choice 3
+	A::A()
+B::B()
+A::Foo()
+Choice 4
+	B::B()
+B::Foo()
+Choice 5
+	A::A()
+B::B()
+A::Foo()
+B::Foo()
+17)	Question   	Which one of the following is a literal expression of type float?
+Choice 1
+	2.0f
+Choice 2
+	2.0
+Choice 3
+	(float)2
+Choice 4
+	2f
+Choice 5
+	f2.0
+18)	Sample Code
+ 
+Question 	Referring to the sample code above, which one of the following variables can be referenced in Friend?
+Choice 1
+	a only
+Choice 2
+	a and d only
+Choice 3
+	b and a only
+Choice 4
+	a, b, and c only
+Choice 5
+	a, b, and d only
+19)	Sample Code
+ 
+Question 	When the sample code above is compiled, which of the labeled lines contains an error?
+Choice 1
+	Line 1
+Choice 2
+	Line 2
+Choice 3
+	Line 3
+Choice 4
+	Lines 1 and 3
+Choice 5
+	Lines 1 and 2
+20)	Question   	Which one of the following shows a syntactically correct loop written in C++?
+Choice 1
+	for (int i=0, i<10, i++) std::cout << i << std::endl;
+Choice 2
+	int i = 0;
+do (i<10) { std::cout << i << std::endl; }
+Choice 3
+	int i = 0;
+while { std::cout << i << std::endl; } (1<10);
+Choice 4
+	int i=0;
+if (i<10) std::cout << i << std::endl;
+Choice 5
+	for (int  i=0; i>-9; i--) std::cout << i << std::endl;
+21)	Question   	Which one of the following standard container classes does the priority_queue container adapter class allow you to use as an underlying collection container?
+Choice 1
+	multimap
+Choice 2
+	set
+Choice 3
+	vector
+Choice 4
+	group
+Choice 5
+	Map
+22)	
+
+

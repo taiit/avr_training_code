@@ -1,4 +1,4 @@
-c1.staticflickr.com/1/409/19255420479_688b997208_o.png
+﻿c1.staticflickr.com/1/409/19255420479_688b997208_o.png
 
 /1/409/19255420479_688b997208_o.png
 Fuse bit cua AVR
@@ -14,4 +14,7 @@ AVR bootloader
 	BootUSB_HID
 	BootUART
 AVR memory
+	Harvard
+	Bootloader
+	Fuse bit
 	
